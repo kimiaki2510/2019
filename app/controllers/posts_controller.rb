@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     #render plain: params[:post].inspect
     @post = Post.new(post_params)
     if @post.save
-      redirect_to posts_path and return
+      redirect_to root_path
     else
     #render plain: @post.errors.inspect
     render 'new'
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to posts_path
+      redirect_to root_path
     else
       render 'edit'
     end
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path
+    redirect_to root_path
   end
 
   private
