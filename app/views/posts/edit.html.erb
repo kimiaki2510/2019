@@ -1,11 +1,6 @@
 <h1><%= @post.id %>の編集ページ</h1>
 
-<%= form_for(@post)do |f| %>
-  <%= f.label :タイトル %>
-  <%= f.text_field :title, class: 'form-control' %>
-  <%= f.label :内容 %>
-  <%= f.text_area :body, class: 'form-contorl' %>
 
-  <%= f.submit "更新する", class: 'btn btn-primary'%>
-<% end %>
-<%= render 'form'%>
+<%= render 'form', post: @post%>
+
+<%= link_to '戻る', post_path%>
